@@ -1,3 +1,50 @@
 spring:
+  config:
+    import: optional:file:../.env[.properties]
+
   application:
     name: reservtix-backend
+
+  ai:
+   google:
+    genai:
+      api-key: ${GEMINI_API_KEY}
+      embedding:
+        api-key: ${GEMINI_API_KEY}
+
+  # Database Configuration (Neon PostgreSQL 18)
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  # JPA & Hibernate Settings
+  jpa:
+    hibernate:
+      ddl-auto: validate # Flyway manages schema
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+
+  # Flyway Database Migration Engine
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+  # Redis Configuration (Upstash)
+  data:
+    redis:
+      url: ${REDIS_URL}
+
+# Application Specific Security Properties
+jwt:
+  secret: ${JWT_SECRET}
+  expiration: ${JWT_EXPIRATION:86400000} # Default to 24 hours if not specified
+
+google:
+  oauth2:
+    client-id: ${GOOGLE_CLIENT_ID}
+    client-secret: ${GOOGLE_CLIENT_SECRET}
