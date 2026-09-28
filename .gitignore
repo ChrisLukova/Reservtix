@@ -1,0 +1,7 @@
+/reservtix-backend/target/
+/reservtix-backend/.idea/
+/reservtix-backend/.vscode/
+/reservtix-frontend/node_modules/
+/reservtix-frontend/dist/
+.DS_Store
+*.log
