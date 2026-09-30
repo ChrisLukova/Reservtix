@@ -21,11 +21,11 @@ spring:
 
   # JPA & Hibernate Settings
   jpa:
+    open-in-view: false
     hibernate:
       ddl-auto: validate # Flyway manages schema
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
 
