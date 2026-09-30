@@ -132,6 +132,12 @@
 			<version>1.6.3</version>
 		</dependency>
 
+		<!-- Lettuce Connection Pooling for High Concurrency Redis -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-pool2</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator-test</artifactId>
